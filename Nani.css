@@ -2,9 +2,12 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 100;
 }
+body{
+    background-color: #fff0df;
+}
 
 .nav{
-    background-color: bisque;
+    background-color: #f7be7b;
 }
 .nav_li{
     display: inline-block;
@@ -33,11 +36,11 @@
         position: absolute;
         width: 100%;
         font-size: 25px;
-        background-color: antiquewhite;
+        background-color: #f7be7b;
         margin-top: -64px;
         z-index: 100;
     }
-    .ul__button{
+    .ul__button i{
         padding: 6px 20px;
         text-align: right;
         width: 100%;
