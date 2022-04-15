@@ -1,24 +1,44 @@
 * {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Sen", sans-serif;
     font-weight: 100;
 }
 
-body {
-    background-color: #fff0df;
+.contenedor {
+    display: grid;
+    grid-template-rows: 60px 1fr 1fr 1fr 1fr 20px;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100vh;
 }
 
-.nav {
-    background-color: #f7be7b;
+.Heid,
+.aticle,
+.fon,
+.asi {
+    padding: 20px;
+}
+
+.Heid {
+    background-color: rgb(1, 1, 84);
+    grid-column: 1/span 3;
+    grid: minmax(200px);
 }
 
 .nav_li {
     display: inline-block;
     padding: 10px;
     margin: 7px;
+    transform: translateY(-15px);
+}
+.nav_li a:hover{
+    color: red;
+}
+#hola{
+    transform: translate( 400px, -15px);
 }
 
 .nav_li a {
     text-decoration: none;
+    color: #fff;
 }
 
 .ul {
@@ -26,46 +46,77 @@ body {
 }
 
 .div {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    MARGIN: 100px 40px;
-    border-radius: 10%;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-auto-columns: 100px;
+    grid-gap: 10px;
+    transform: translate(100px);
 }
 
+.aticle {
+    background: radial-gradient(circle,#fff, #bbb);
+    grid-column: 1/ 8;
+    grid-row: 2/ 7;
+    overflow: auto;
+}
+
+.asi {
+    background: radial-gradient(circle,#fff, #ddd);
+    grid-row: 2/7;
+
+}
 .from {
     min-width: 400px;
     flex: 2;
     text-align: center;
     padding: 30px;
 }
+
 .from_input {
     width: 100%;
-    padding: 30px;
+    padding: 25px;
     border: none;
-    border-bottom: 3px solid #fffac1;
     background-color: snow;
+
 }
-.from_input[type="submit"]:hover{
+
+.from_input[type="submit"]:hover {
     background-color: rgb(227, 227, 227);
 }
-.from_input[type="submit"]:focus{
-    background-color: linear-gradient(to bottom, transition,#000);
+
+.from_input[type="submit"]:focus {
+    background-color: linear-gradient(to bottom, transition, #000);
 }
-.from_input[type="submit"]:active{
-    background-color: linear-gradient(to bottom, #002,#000);
+
+.from_input[type="submit"]:active {
+    background-color: linear-gradient(to bottom, #002, #000);
 }
+
 a {
     text-decoration: none;
 }
 
+@media only screen and (Max-width:500px) {
+    .contenedor {
+        display: grid;
+        grid-template-rows: 60px 1fr 1fr 1fr 1fr 20px;
+        grid-template-columns: repeat(3, 1fr);
+        height: 1200vh;
+        width: 100vh;
+        line-height: 50px;
+    }
+    .asi {
+        display: none;
+    }
 
-@media only screen and (max-width:500px) {
+    .aticle {
+        grid-column: 1/ 8;
+    }
+
     .nav {
         height: 37px;
-        width: 100%;
+        width: 50;
+
     }
 
     .nav_ul {
@@ -76,8 +127,8 @@ a {
         position: absolute;
         width: 100%;
         font-size: 25px;
-        background-color: #f7be7b;
-        margin-top: -64px;
+        background-color: rgb(79, 79, 240);
+        transform: translateY(-64px);
         z-index: 100;
     }
 
@@ -92,24 +143,22 @@ a {
         position: absolute;
         height: 37px;
         width: 100%;
-        margin-top: 37px;
-        padding-top: 27px;
     }
 
     .ul_ {
         position: relative;
-        top: -1000px;
+        transform: translateY(-300px);
         height: cal(100vh - 64px);
         width: 75%;
-        padding-top: 22px;
+        transform: translate(50% 50%);
         background-color: lightblue;
-        transition: all 1s;
+        transition: all 1.5s;
         z-index: 1;
     }
 
     .ul_li {
-        width: 100%;
-        padding: 9px 20px;
+        width: 20%;
+        padding: 8px 30px;
     }
 
     .ul_li i {
@@ -117,6 +166,7 @@ a {
         text-align: center;
         margin-right: 5px;
         width: 30px;
+       
     }
 
     .ul_li a {
@@ -124,15 +174,14 @@ a {
     }
 
     .ul:hover>.ul_ {
-        top: -27px;
+        transform: translate(-1px);
     }
 
-    .div {
-        line-height: 50px;
-    }
-
-    .from_input {
-        width: 100%;
-        padding: 15px;
+     .div {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        grid-auto-columns: 50px 1fr;
+        grid-gap: 10px;
+        transform: translate(-30px);
     }
 }
