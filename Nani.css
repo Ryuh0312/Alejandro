@@ -3,9 +3,13 @@
     font-weight: 100;
 }
 
+body {
+    overflow: hidden;
+}
+
 .contenedor {
     display: grid;
-    grid-template-rows: 60px 1fr 1fr 1fr 1fr 20px;
+    grid-template-rows: 60px 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
     height: 100vh;
 }
@@ -25,15 +29,17 @@
 
 .nav_li {
     display: inline-block;
-    padding: 10px;
+    padding: -60px;
     margin: 7px;
-    transform: translateY(-15px);
+    transform: translateY();
 }
-.nav_li a:hover{
+
+.nav_li a:hover {
     color: red;
 }
-#hola{
-    transform: translate( 400px, -15px);
+
+#hola {
+    transform: translateX(720px);
 }
 
 .nav_li a {
@@ -53,23 +59,55 @@
 }
 
 .aticle {
-    background: radial-gradient(circle,#fff, #bbb);
+    background: radial-gradient(circle, #fff, #bbb);
     grid-column: 1/ 3;
     grid-row: 2/ 7;
+    overflow: auto;
 }
 
 .asi {
-    background: radial-gradient(circle,#fff, #ddd);
+    background: radial-gradient(circle, #fff, #ddd);
     grid-row: 2/7;
 
 }
 
-@media only screen and (Max-width:500px) {
+.none {
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+}
+
+.foro {
+    position: sticky;
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+    border-radius: 60%;
+}
+
+h6 {
+    padding-left: 10px;
+}
+
+p {
+    padding-left: 10px;
+}
+
+@media only screen and (Max-width:600px) {
     .asi {
         display: none;
     }
+
+    .contenedor {
+        width: auto;
+    }
+
     .aticle {
-        grid-column: 1/ 10;
+        grid-column: 1/ 8;
         overflow: auto;
     }
 
@@ -135,7 +173,7 @@
         transform: translate(-1px);
     }
 
-    .div{
+    .fon_div {
         display: grid;
         grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
         grid-auto-columns: 50px;
